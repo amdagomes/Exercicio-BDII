@@ -5,9 +5,24 @@
  */
 package com.atividadejts.visao;
 
+import com.atividadejts.controle.CriaSvg;
+import com.atividadejts.controle.SvgFactory;
+import com.atividadejts.controle.ViewBox;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.io.ParseException;
 import com.vividsolutions.jts.io.WKTReader;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import org.apache.batik.transcoder.TranscoderException;
+import org.apache.batik.transcoder.TranscoderInput;
+import org.apache.batik.transcoder.TranscoderOutput;
+import org.apache.batik.transcoder.image.JPEGTranscoder;
 
 /**
  *
@@ -15,10 +30,16 @@ import com.vividsolutions.jts.io.WKTReader;
  */
 public class tela extends javax.swing.JFrame {
 
-    /**
-     * Creates new form tela
-     */
+    private CriaSvg criaSvg;
+    
     public tela() {
+        try {
+            criaSvg = new CriaSvg();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        } catch (ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
         initComponents();
     }
 
@@ -71,6 +92,7 @@ public class tela extends javax.swing.JFrame {
         jLCoveredBy1 = new javax.swing.JLabel();
         jLOverlaps1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jLSvg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,7 +103,6 @@ public class tela extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText("GEOMETRIA A");
 
-        geometriaA.setBackground(new java.awt.Color(255, 255, 255));
         geometriaA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 geometriaAActionPerformed(evt);
@@ -92,7 +113,6 @@ public class tela extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(51, 51, 51));
         jLabel2.setText("GEOMETRIA B");
 
-        geometriaB.setBackground(new java.awt.Color(255, 255, 255));
         geometriaB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 geometriaBActionPerformed(evt);
@@ -258,7 +278,12 @@ public class tela extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
+                        .addContainerGap()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLSvg, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(87, 87, 87)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -272,11 +297,8 @@ public class tela extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(jLabel1)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(geometriaA, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(21, Short.MAX_VALUE))
+                                    .addComponent(geometriaA, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -289,20 +311,24 @@ public class tela extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(geometriaB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
+                    .addComponent(jLSvg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -332,9 +358,21 @@ public class tela extends javax.swing.JFrame {
             Geometry geometryA = reader.read(geometriaA.getText());
             Geometry geometryB = reader.read(geometriaB.getText());
 
-            verificaGeometrias(geometryA, geometryB);
+            verificaGeometrias(geometryA, geometryB);//verifica os relacionamentos das geometrias
+            
+            ViewBox vBox = new ViewBox(geometryA,geometryB);
+            String viewBox = vBox.getViewBox();//viewBox das geometrias;
+            
+            String cdGeomA = SvgFactory.getSvg(geometryA);//pega coordenadas da geometriaA
+            String cdGeomB = SvgFactory.getSvg(geometryB);//pega coordenadas da geometriaB
+           
+            criaSvg.criaArquivo(viewBox, cdGeomA, cdGeomB);
+            
+            setGeom();
 
         } catch (ParseException ex) {
+            ex.printStackTrace();
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -395,6 +433,7 @@ public class tela extends javax.swing.JFrame {
     private javax.swing.JLabel jLIntersect1;
     private javax.swing.JLabel jLOverlaps;
     private javax.swing.JLabel jLOverlaps1;
+    private javax.swing.JLabel jLSvg;
     private javax.swing.JLabel jLTouches;
     private javax.swing.JLabel jLTouches1;
     private javax.swing.JLabel jLWithin;
@@ -539,6 +578,31 @@ public class tela extends javax.swing.JFrame {
             jLOverlaps1.setText("T");
         } else {
             jLOverlaps1.setText("F");
+        }
+    }
+
+    private void setGeom() {
+        
+        try{
+         JPEGTranscoder t = new JPEGTranscoder();
+            t.addTranscodingHint(JPEGTranscoder.KEY_QUALITY,
+                    new Float(.8));
+
+            String svgURI = new File("Saida.svg").toURI().toURL().toString();
+            TranscoderInput input = new TranscoderInput(svgURI);
+
+            OutputStream ostream = new FileOutputStream("Saida.jpg");
+            TranscoderOutput output = new TranscoderOutput(ostream);
+         
+            t.transcode(input, output);
+
+            jLSvg.setIcon(new ImageIcon(ImageIO.read(new File("Saida.jpg"))));
+
+            ostream.flush();
+            ostream.close();
+
+        } catch (IOException | TranscoderException ex) {        
+            ex.printStackTrace();
         }
     }
 }

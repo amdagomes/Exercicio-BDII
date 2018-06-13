@@ -25,10 +25,17 @@
             <artifactId>jts</artifactId>
             <version>1.13</version>
         </dependency>
+        
         <dependency>
             <groupId>unknown.binary</groupId>
             <artifactId>AbsoluteLayout</artifactId>
             <version>SNAPSHOT</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>batik</groupId>
+            <artifactId>batik-transcoder</artifactId>
+            <version>1.6-1</version>
         </dependency>
     </dependencies>
     
