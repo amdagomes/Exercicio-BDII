@@ -15,8 +15,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import org.apache.batik.transcoder.TranscoderException;
@@ -135,22 +133,22 @@ public class tela extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
         jLabel3.setForeground(javax.swing.UIManager.getDefaults().getColor("CheckBoxMenuItem.selectionBackground"));
         jLabel3.setText("COVERS");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 90, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
         jLabel4.setForeground(javax.swing.UIManager.getDefaults().getColor("CheckBoxMenuItem.selectionBackground"));
         jLabel4.setText("TOUCHES");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 90, -1, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
         jLabel5.setForeground(javax.swing.UIManager.getDefaults().getColor("CheckBoxMenuItem.selectionBackground"));
         jLabel5.setText("CONTAINS");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 60, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
         jLabel6.setForeground(javax.swing.UIManager.getDefaults().getColor("CheckBoxMenuItem.selectionBackground"));
         jLabel6.setText("COVEREDBY");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 230, -1, -1));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(51, 51, 51));
@@ -160,72 +158,72 @@ public class tela extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
         jLabel8.setForeground(javax.swing.UIManager.getDefaults().getColor("CheckBoxMenuItem.selectionBackground"));
         jLabel8.setText("WITHIN");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 110, -1, -1));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
         jLabel9.setForeground(javax.swing.UIManager.getDefaults().getColor("CheckBoxMenuItem.selectionBackground"));
         jLabel9.setText("EQUALS");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 130, -1, -1));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
         jLabel10.setForeground(javax.swing.UIManager.getDefaults().getColor("CheckBoxMenuItem.selectionBackground"));
         jLabel10.setText("DISJOINT");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 150, -1, -1));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 215, -1, 10));
 
         jLabel11.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
         jLabel11.setForeground(javax.swing.UIManager.getDefaults().getColor("CheckBoxMenuItem.selectionBackground"));
         jLabel11.setText("INTERSECT");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 250, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
         jLabel12.setForeground(javax.swing.UIManager.getDefaults().getColor("CheckBoxMenuItem.selectionBackground"));
         jLabel12.setText("CROSSES");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 190, -1, -1));
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 280, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
         jLabel13.setForeground(javax.swing.UIManager.getDefaults().getColor("CheckBoxMenuItem.selectionBackground"));
         jLabel13.setText("OVERLAPS");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 310, -1, -1));
 
         jLCovers.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
         jLCovers.setForeground(new java.awt.Color(51, 51, 51));
-        jPanel2.add(jLCovers, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 68, 30, 20));
+        jPanel2.add(jLCovers, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 30, 20));
 
         jLTouches.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
         jLTouches.setForeground(new java.awt.Color(51, 51, 51));
-        jPanel2.add(jLTouches, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 88, 30, 20));
+        jPanel2.add(jLTouches, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 30, 20));
 
         jLContains.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
         jLContains.setForeground(new java.awt.Color(51, 51, 51));
-        jPanel2.add(jLContains, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 48, 30, 20));
+        jPanel2.add(jLContains, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 30, 20));
 
         jLCoveredBy.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
         jLCoveredBy.setForeground(new java.awt.Color(51, 51, 51));
-        jPanel2.add(jLCoveredBy, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 228, 30, 20));
+        jPanel2.add(jLCoveredBy, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, 30, 20));
 
         jLWithin.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
         jLWithin.setForeground(new java.awt.Color(51, 51, 51));
-        jPanel2.add(jLWithin, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 108, 30, 20));
+        jPanel2.add(jLWithin, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 30, 20));
 
         jLEquals.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
         jLEquals.setForeground(new java.awt.Color(51, 51, 51));
-        jPanel2.add(jLEquals, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 128, 30, 20));
+        jPanel2.add(jLEquals, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 30, 20));
 
         jLDisjoint.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
         jLDisjoint.setForeground(new java.awt.Color(51, 51, 51));
-        jPanel2.add(jLDisjoint, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 148, 30, 20));
+        jPanel2.add(jLDisjoint, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 215, 30, 20));
 
         jLIntersect.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
         jLIntersect.setForeground(new java.awt.Color(51, 51, 51));
-        jPanel2.add(jLIntersect, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 168, 30, 20));
+        jPanel2.add(jLIntersect, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 30, 20));
 
         jLCrosses.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
         jLCrosses.setForeground(new java.awt.Color(51, 51, 51));
-        jPanel2.add(jLCrosses, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 188, 30, 20));
+        jPanel2.add(jLCrosses, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 30, 20));
 
         jLOverlaps.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
         jLOverlaps.setForeground(new java.awt.Color(51, 51, 51));
-        jPanel2.add(jLOverlaps, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 208, 30, 20));
+        jPanel2.add(jLOverlaps, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, 30, 20));
 
         jLabel14.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(51, 51, 51));
@@ -233,34 +231,34 @@ public class tela extends javax.swing.JFrame {
         jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 20, -1, -1));
 
         jLContains1.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
-        jPanel2.add(jLContains1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 48, 20, 20));
+        jPanel2.add(jLContains1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 20, 20));
 
         jLTouches1.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
-        jPanel2.add(jLTouches1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 88, 20, 20));
+        jPanel2.add(jLTouches1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 20, 20));
 
         jLCovers1.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
-        jPanel2.add(jLCovers1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 68, 20, 20));
+        jPanel2.add(jLCovers1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 20, 20));
 
         jLWithin1.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
-        jPanel2.add(jLWithin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 108, 20, 20));
+        jPanel2.add(jLWithin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 20, 20));
 
         jLEquals1.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
-        jPanel2.add(jLEquals1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 128, 20, 20));
+        jPanel2.add(jLEquals1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 20, 20));
 
         jLIntersect1.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
-        jPanel2.add(jLIntersect1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 168, 20, 20));
+        jPanel2.add(jLIntersect1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 20, 20));
 
         jLDisjoint1.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
-        jPanel2.add(jLDisjoint1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 148, 20, 20));
+        jPanel2.add(jLDisjoint1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 215, 20, 20));
 
         jLCrosses1.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
-        jPanel2.add(jLCrosses1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 188, 20, 20));
+        jPanel2.add(jLCrosses1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 20, 20));
 
         jLCoveredBy1.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
-        jPanel2.add(jLCoveredBy1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 228, 20, 20));
+        jPanel2.add(jLCoveredBy1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 20, 20));
 
         jLOverlaps1.setFont(new java.awt.Font("Roboto Bk", 1, 12)); // NOI18N
-        jPanel2.add(jLOverlaps1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 208, 20, 20));
+        jPanel2.add(jLOverlaps1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 20, 20));
 
         jButton2.setFont(new java.awt.Font("Roboto Bk", 0, 12)); // NOI18N
         jButton2.setText("Processar");
@@ -281,7 +279,7 @@ public class tela extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLSvg, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLSvg, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(87, 87, 87)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -317,9 +315,9 @@ public class tela extends javax.swing.JFrame {
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 422, Short.MAX_VALUE)
                     .addComponent(jLSvg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
